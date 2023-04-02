@@ -101,11 +101,11 @@ std::ostream& operator<<(std::ostream& os, Vector const& other)
 std::istream& operator>>(std::istream& is, Vector& other)
 {
   Vector tmp;
+  // std::ws get exactly the value with no spcaces.
   is >> std::ws;
   // .peek() get the top of the stack.
   if (is.peek() == '(')
   {
-    // std::ws get exactly the value with no spcaces.
     if (is.ignore(1) >> std::ws >> tmp.x >> std::ws)
     {
       if (is.peek() == ',')
@@ -122,6 +122,7 @@ std::istream& operator>>(std::istream& is, Vector& other)
       }
     }
   }
+  // error control
   is.setstate(std::ios::failbit);
   return is;
 }

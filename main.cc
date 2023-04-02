@@ -72,6 +72,7 @@ int main()
     istringstream iss { "1 0" };
     Vector v { };
     assert( !(iss >> v) );
+    cout << v << endl;
     assert( v == Vector { } );
   }
 }
