@@ -31,6 +31,7 @@ private:
   double y;
 };
 
+// In any case, it is preferable to declare it as a non-member, to ensure symmetry between the LHS and the RHS of the operation.
 Vector operator+(Vector const& lhs, Vector const& rhs);
 Vector operator-(Vector const& lhs, Vector const& rhs);
 Vector operator*(Vector const& lhs, double rhs);
